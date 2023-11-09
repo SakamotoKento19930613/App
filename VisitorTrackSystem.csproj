@@ -1,0 +1,248 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{0D26EE6B-1D0B-4A77-9F00-3EB9B1936014}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>VisitorTrackSystem</RootNamespace>
+    <AssemblyName>VisitorTrackSystem</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="LiteDB, Version=5.0.17.0, Culture=neutral, PublicKeyToken=4ee40123013c9f27, processorArchitecture=MSIL">
+      <HintPath>packages\LiteDB.5.0.17\lib\net45\LiteDB.dll</HintPath>
+    </Reference>
+    <Reference Include="MaterialDesignColors, Version=2.1.4.0, Culture=neutral, PublicKeyToken=df2a72020bd7962a, processorArchitecture=MSIL">
+      <HintPath>packages\MaterialDesignColors.2.1.4\lib\net462\MaterialDesignColors.dll</HintPath>
+    </Reference>
+    <Reference Include="MaterialDesignThemes.Wpf, Version=4.9.0.0, Culture=neutral, PublicKeyToken=df2a72020bd7962a, processorArchitecture=MSIL">
+      <HintPath>packages\MaterialDesignThemes.4.9.0\lib\net462\MaterialDesignThemes.Wpf.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Xaml.Behaviors, Version=1.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.Xaml.Behaviors.Wpf.1.1.39\lib\net45\Microsoft.Xaml.Behaviors.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Configuration.ConfigurationManager, Version=7.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>packages\System.Configuration.ConfigurationManager.7.0.0\lib\net462\System.Configuration.ConfigurationManager.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.OracleClient" />
+    <Reference Include="System.Net" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Security.AccessControl, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.Security.AccessControl.6.0.0\lib\net461\System.Security.AccessControl.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security.Permissions, Version=7.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>packages\System.Security.Permissions.7.0.0\lib\net462\System.Security.Permissions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security.Principal.Windows, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.Security.Principal.Windows.5.0.0\lib\net461\System.Security.Principal.Windows.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ServiceProcess" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="UIAutomationProvider" />
+    <Reference Include="WindowsBase" />
+    <Reference Include="WindowsFormsIntegration" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="src\Common\Message\EmailMessage.cs" />
+    <Compile Include="src\Common\Message\MessageConst.cs" />
+    <Compile Include="src\Common\Message\ErrorMessageConst.cs" />
+    <Compile Include="src\Entity\AddressData.cs" />
+    <Compile Include="src\Entity\Worship.cs" />
+    <Compile Include="src\Entity\AdminUser.cs" />
+    <Compile Include="src\Helpers\EmailHelper.cs" />
+    <Compile Include="src\Helpers\AddressHelper.cs" />
+    <Compile Include="src\Helpers\SessionHelper.cs" />
+    <Compile Include="src\Helpers\PasswordHelper.cs" />
+    <Compile Include="src\Helpers\DbHelper.cs" />
+    <Compile Include="src\Helpers\StringHelper.cs" />
+    <Compile Include="src\Models\AdminUsers\AdminUserModel.cs" />
+    <Compile Include="src\Models\Auth\AuthModel.cs" />
+    <Compile Include="src\Models\Worship\WorshipModel.cs" />
+    <Compile Include="src\Service\Auth\AuthService.cs" />
+    <Compile Include="src\Service\AdminUsers\AdminUserService.cs" />
+    <Compile Include="src\Service\Auth\AppUserActivityDetector.cs" />
+    <Compile Include="src\Service\Auth\UserActivityDetector.cs" />
+    <Compile Include="src\Service\Worshipers\WorshipService.cs" />
+    <Compile Include="src\Views\AdminUsers\AdminUserListView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="src\Views\AdminUsers\AdminUserListView.Designer.cs">
+      <DependentUpon>AdminUserListView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="src\Views\AdminUsers\AddAdminUserView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="src\Views\AdminUsers\AddAdminUserView.Designer.cs">
+      <DependentUpon>AddAdminUserView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="src\Views\AdminUsers\AdminUserDetailView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="src\Views\AdminUsers\AdminUserDetailView.Designer.cs">
+      <DependentUpon>AdminUserDetailView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="src\Views\Login\EmailSendView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="src\Views\Login\EmailSendView.Designer.cs">
+      <DependentUpon>EmailSendView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="src\Views\Login\AuthCodeView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="src\Views\Login\AuthCodeView.Designer.cs">
+      <DependentUpon>AuthCodeView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="src\Views\Login\PasswordUpdateView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="src\Views\Login\PasswordUpdateView.Designer.cs">
+      <DependentUpon>PasswordUpdateView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="src\Views\Login\LoginView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="src\Views\Login\LoginView.Designer.cs">
+      <DependentUpon>LoginView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="src\App.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="src\Views\Menu\MenuView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="src\Views\Menu\MenuView.Designer.cs">
+      <DependentUpon>MenuView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="src\Views\Worshipers\AddWorshipView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="src\Views\Worshipers\AddWorshipView.Designer.cs">
+      <DependentUpon>AddWorshipView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="src\Views\Worshipers\FamilyDataView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="src\Views\Worshipers\FamilyDataView.Designer.cs">
+      <DependentUpon>FamilyDataView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="src\Views\Worshipers\WorshiperListView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="src\Views\Worshipers\WorshiperListView.Designer.cs">
+      <DependentUpon>WorshiperListView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tests\TestInsert.cs" />
+    <EmbeddedResource Include="src\Views\AdminUsers\AddAdminUserView.resx">
+      <DependentUpon>AddAdminUserView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="src\Views\AdminUsers\AdminUserDetailView.resx">
+      <DependentUpon>AdminUserDetailView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="src\Views\AdminUsers\AdminUserListView.resx">
+      <DependentUpon>AdminUserListView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="src\Views\Login\EmailSendView.resx">
+      <DependentUpon>EmailSendView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="src\Views\Login\AuthCodeView.resx">
+      <DependentUpon>AuthCodeView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="src\Views\Login\LoginView.resx">
+      <DependentUpon>LoginView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="src\Views\Login\PasswordUpdateView.resx">
+      <DependentUpon>PasswordUpdateView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="src\Views\Menu\MenuView.resx">
+      <DependentUpon>MenuView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="src\Views\Worshipers\AddWorshipView.resx">
+      <DependentUpon>AddWorshipView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="src\Views\Worshipers\FamilyDataView.resx">
+      <DependentUpon>FamilyDataView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="src\Views\Worshipers\WorshiperListView.resx">
+      <DependentUpon>WorshiperListView.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <None Include="Resources\KEN_ALL.CSV" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Data\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\logo.ico" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="packages\MaterialDesignThemes.4.9.0\build\MaterialDesignThemes.targets" Condition="Exists('packages\MaterialDesignThemes.4.9.0\build\MaterialDesignThemes.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>このプロジェクトは、このコンピューター上にない NuGet パッケージを参照しています。それらのパッケージをダウンロードするには、[NuGet パッケージの復元] を使用します。詳細については、http://go.microsoft.com/fwlink/?LinkID=322105 を参照してください。見つからないファイルは {0} です。</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('packages\MaterialDesignThemes.4.9.0\build\MaterialDesignThemes.targets')" Text="$([System.String]::Format('$(ErrorText)', 'packages\MaterialDesignThemes.4.9.0\build\MaterialDesignThemes.targets'))" />
+  </Target>
+</Project>
